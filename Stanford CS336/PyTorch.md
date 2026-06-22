@@ -48,4 +48,6 @@ x = x.reshape(...)
 <img width="765" height="666" alt="image" src="https://github.com/user-attachments/assets/013955c7-66cd-4c3a-b940-d2a449f4576b" />
 <img width="545" height="150" alt="image" src="https://github.com/user-attachments/assets/bac3f3dd-3b77-4ac6-b65b-0f54e3b827d9" />
 <img width="976" height="329" alt="image" src="https://github.com/user-attachments/assets/8d26aca0-e04c-4204-ba1a-f9f08fe2f9ed" />
+**7.计算瓶颈和内存瓶颈**
+<img width="1718" height="685" alt="image" src="https://github.com/user-attachments/assets/1d65d5b3-55b9-42ae-afc5-79d6279cc898" />
 
