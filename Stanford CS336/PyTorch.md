@@ -16,7 +16,7 @@
 
 一般，BF16（bfloat16）用于参数、激活值和梯度，优化器状态使用FP32。若要启用混合精度训练，Pytorch提供了automatic mixed precision（AMP）library。
 
-**3. einops -- Pytorch的张量操作库**
+**3.einops -- Pytorch的张量操作库**
 
 einops 是Pytorch中的一个非常流行的张量（Tensor）操作库，它的目标是让张量的 reshape、transpose、flatten、repeat 等操作变得更加直观、可读。
 
@@ -27,3 +27,6 @@ x = x.permute(0, 2, 3, 1)
 x = x.reshape(...)
 ```
 维度稍微复杂一点就很难读。而用 einops 可以直接用字符串描述维度变换。
+
+**4.了解特定某种硬件能提供多少浮点运算次数 & 特定模型需要消耗多少浮点运算次数（也就是模型规模）**
+<img width="2321" height="1279" alt="15f1e0fb7035ad1f651e0e92514e2a0c" src="https://github.com/user-attachments/assets/8cb0bf8a-ae95-473b-971a-ac3c078d48b2" />
