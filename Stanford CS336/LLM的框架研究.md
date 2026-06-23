@@ -13,17 +13,21 @@
 ## 2.现代Transformer和Attention is all you need里的Transformer的最大不同
 先梳理两个概念：Add & Layernorm
 
+---
+
 其中Add就是残差连接，也叫残差流，也叫残差。**残差**就是**把原输入 x 原封不动保留下来，再加上这一层学到的“改动量”。**
 
 或者说，**残差连接就是让每一层只负责修改输入，而不是重新生成输入。**
 
 ```text
-输出y=输入x+Attention或者MLP算出来的改动
+残差的公式：输出y=输入x+Attention或者MLP算出来的改动
 ```
+
+---
 
 Layernorm是指层归一化。作用是把每个 token 的hidden state隐藏层的各个特征值调整到一个稳定的数值范围（均值0，均方误差1），防止训练过程中数值越来越大或越来越小，利于训练的稳定。
 
-**残差连接**和**Layernorm**没有任何关系，不用一起出现。传统Transformer和现代Transformer的最大区别是：**LayerNorm 放在 Attention/MLP 前面，还是后面。**
+**残差连接**和**Layernorm**没有任何关系，不用一起出现。传统Transformer（PostNorm）和现代Transformer（PreNorm）的最大区别是：**LayerNorm 放在 Attention/MLP 前面，还是后面。**
 
 <img width="660" height="800" alt="image" src="https://github.com/user-attachments/assets/bfe5a92a-9c8f-4086-8724-3befa3f8ecf0" />
 <img width="454" height="730" alt="image" src="https://github.com/user-attachments/assets/a813737d-59eb-4657-8b99-590fe7065abb" />
