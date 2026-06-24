@@ -14,6 +14,15 @@
 | 用在哪里 | Transformer 中间层 | Attention 权重 / 输出概率 |
 | 目的   | 方便训练            | 做选择/分配权重            |
 
+---
+
+# 重点来了--一个新的提高训练稳定性方式：QK Norm（Layernorm的变体）
+ QK Norm 在 Attention 里，先把 Query（Q） 和 Key（K） 做一次归一化，再去算 softmax，从而让 attention 更稳定。
+
+ QK Norm 是给 Attention 的 softmax 加一个“稳压器”，防止 QK 分数过大导致 attention 不稳定。
+
+ ---
+ 
 # Softmax 位置
 ## 1.Attention 里的 Softmax，位置在 QK 打分之后，乘 V 之前。（因为Softmax的输入只和QK有关）**
 这里的Softmax在当前样本的 **seq_len** 维度上做。比如一句话有 5 个 token：[我, 喜欢, 机器, 学习, EOS]
@@ -190,4 +199,8 @@ x = x + out
 ↓ 后面进入 MLP / FFN
 ```
 
+# 重点来了--一个新的提高训练稳定性方式：QK Norm（Layernorm的变体）
+ QK Norm 在 Attention 里，先把 Query（Q） 和 Key（K） 做一次归一化，再去算 softmax，从而让 attention 更稳定。
+
+ QK Norm 是给 Attention 的 softmax 加一个“稳压器”，防止 QK 分数过大导致 attention 不稳定。
 
