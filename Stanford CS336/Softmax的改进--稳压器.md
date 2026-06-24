@@ -31,7 +31,7 @@ EOS 多少
 所以它处理的是：**同一个样本内部的 token 之间关系**，即**当前Token应该更关注这个seq_length列的哪个其他Token？对其他Token的注意力应该分配多少？**
 
 ## 2.输出层里的 Softmax，位置在 最后一个 Transformer block 之后，Linear/LM Head 之后。
-这里的Softmax是在词表 **vocab_size** 维度上做。比如词表有 128000 个 token，模型最后会给每个词一个 logit：
+这里的Softmax是在词表 **vocab_size** 维度上做。比如词表有 128000 个 token，模型最后会给每个词一个 logit，logits 是模型给词表（vocab_size）里每个候选 token 打的原始分数：
 ```
 “我”
 “你”
@@ -49,7 +49,8 @@ EOS 多少
 
 [batch, seq_len, vocab_size]
 
-Softmax 作用在 vocab_size 上。所以它处理的是，**模型接下来该生成哪个token。** logits 是模型给词表（vocab_size）里每个候选 token 打的原始分数；
+Softmax 作用在 vocab_size 上。所以它处理的是，**模型接下来该生成哪个token。** 
+
 
 **整体结构：**
 
