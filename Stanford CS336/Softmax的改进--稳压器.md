@@ -49,7 +49,7 @@ EOS 多少
 
 [batch, seq_len, vocab_size]
 
-Softmax 作用在 vocab_size 上。所以它处理的是，**模型接下来该生成哪个token。**
+Softmax 作用在 vocab_size 上。所以它处理的是，**模型接下来该生成哪个token。** logits 是模型给词表（vocab_size）里每个候选 token 打的原始分数；
 
 **整体结构：**
 
@@ -190,4 +190,3 @@ x = x + out
 ```
 
 
-logits 是模型给词表（vocab_size）里每个候选 token 打的原始分数；
